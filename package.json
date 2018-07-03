@@ -7,7 +7,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --mode development --hot"
+    "start": "webpack-dev-server --hot"
   },
   "dependencies": {
     "css-loader": "^0.28.11",
