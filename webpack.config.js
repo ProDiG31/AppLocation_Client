@@ -21,7 +21,6 @@ module.exports = {
   module: {
     rules: [
       js_rules
-      //   ,              css_rules  
     ]
   },
   plugins: [new HtmlWebpackPlugin({
