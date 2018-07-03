@@ -35,7 +35,6 @@ class RegisterPage extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-
         this.setState({ submitted: true });
         const { user } = this.state;
         const { dispatch } = this.props;

@@ -19,7 +19,7 @@ class HomePage extends React.Component {
             <div className="col-md-6 col-md-offset-3">
                 <h1>Hi {user.firstName}!</h1>
                 <p>You're logged in with React!!</p>
-                <h3>All registered usrs:</h3>
+                <h3>All registered usrs:</h3>    
                 {users.loading && <em>Loading users...</em>}
                 {users.error && <span className="text-danger">ERROR: {users.error}</span>}
                 {users.items &&
@@ -36,7 +36,8 @@ class HomePage extends React.Component {
                         )}
                     </ul>
                 }
-
+                {/* <img src = {__dirname + 'dzlqj'} ></img> */}
+                
                 <p><Link to="/login">Logout</Link></p>
             </div>
         );

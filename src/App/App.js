@@ -25,6 +25,7 @@ class App extends React.Component {
 
     render() {
         const { alert } = this.props;
+        
         return (
             <Router history={history}>
             <div >

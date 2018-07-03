@@ -7,42 +7,48 @@ class NavBarComponent extends React.Component {
     // componentDidMount() {
     //     // this.props.dispatch(userActions.getAll());
     // }
+    constructor(props){
+        super(props);
+        this.state = {
+            loggingIn: ''    
+        };
+    }
 
     render() {
 
-        // const { user } = this.props
- 
+        const { authentication } = this.props;
+        console.log(authentication);
+
+        const { loggingIn } = this.props;
+        console.log(loggingIn);
+
         return (
         <Navbar inverse collapseOnSelect>
             <Navbar.Header>
                 <Navbar.Brand>
-                <a>Rent Drive</a>
+                <a href='/'>Rent Drive</a>
                 </Navbar.Brand>
                 <Navbar.Toggle />
             </Navbar.Header>
             <Navbar.Collapse>
                 <Nav>
-                    <NavItem eventKey={1} href="#">
+                    <NavItem>
                         My Activities
                     </NavItem>
-                    <NavItem eventKey={2} href="#">
+                    <NavItem>
                         Rent a car
                     </NavItem>
-                    {/* <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-                        <MenuItem eventKey={3.1}>Action</MenuItem>
-                        <MenuItem eventKey={3.2}>Another action</MenuItem>
-                        <MenuItem eventKey={3.3}>Something else here</MenuItem>
-                        <MenuItem divider />
-                        <MenuItem eventKey={3.3}>Separated link</MenuItem>
-                    </NavDropdown> */}
                 </Nav>
                 <Nav pullRight>
                     <NavItem eventKey={1} href="#">
-                        Profile
+                        Profile 
                     </NavItem>
-                    <NavItem eventKey={2} href="#">
-                        <Link to="/login">Logout </Link>
-                    </NavItem>
+                    <NavItem  href="/login">
+                        { loggingIn  &&
+                            "Logout"}
+                        { !loggingIn  &&
+                            "Login"}
+                    </NavItem>  
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

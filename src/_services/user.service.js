@@ -82,7 +82,7 @@ function register(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch(`${url}/users/register`, requestOptions).then(handleResponse);
+    return fetch(`${url}/user/new`, requestOptions).then(handleResponse);
 }
 
 function update(user) {
