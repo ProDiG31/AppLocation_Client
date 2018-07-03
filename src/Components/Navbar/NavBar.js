@@ -1,5 +1,5 @@
 import React from 'react';
-import './NavBar.css'
+import { Button, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 class NavBarComponent extends React.Component {
 
@@ -12,36 +12,39 @@ class NavBarComponent extends React.Component {
         // const { user } = this.props
  
         return (
-            <div className="row">
-                <nav className="navbar navbar-light bg-light">
-                    <span className="navbar-brand mb-0 h1">Rent Drive</span>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="row">
-                            <li className="active col-sm-3">
-                                <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-                            </li>
-                            <li className="col-sm-3">
-                                <a className="nav-link" href="#">Tes</a>
-                            </li>
-                            <li className="col-sm-3">
-                                <a className="nav-link" href="#">Pricing</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                {/* <div className="col-sm-3">
-                Rent Drive
-                </div> */}
-                {/* <div className="col-sm-3">
-                One of three columns
-                </div>
-                <div className="col-sm-3">
-                One of three columns
-                </div>
-                <div className="col-sm-3">
-                One of three columns
-                </div> */}
-            </div> 
+        <Navbar inverse collapseOnSelect>
+            <Navbar.Header>
+                <Navbar.Brand>
+                <a href="#brand">TEST</a>
+                </Navbar.Brand>
+                <Navbar.Toggle />
+            </Navbar.Header>
+            <Navbar.Collapse>
+                <Nav>
+                <NavItem eventKey={1} href="#">
+                    Link
+                </NavItem>
+                <NavItem eventKey={2} href="#">
+                    Link
+                </NavItem>
+                <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+                    <MenuItem eventKey={3.1}>Action</MenuItem>
+                    <MenuItem eventKey={3.2}>Another action</MenuItem>
+                    <MenuItem eventKey={3.3}>Something else here</MenuItem>
+                    <MenuItem divider />
+                    <MenuItem eventKey={3.3}>Separated link</MenuItem>
+                </NavDropdown>
+                </Nav>
+                <Nav pullRight>
+                <NavItem eventKey={1} href="#">
+                    Link Right
+                </NavItem>
+                <NavItem eventKey={2} href="#">
+                    Link Right
+                </NavItem>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
         );
     }
 }
